@@ -42,13 +42,15 @@ class TestCloudinary(unittest.TestCase):
 
 		#testing that the response is 200
 		self.assertEqual(response.status_code, 200)
-		print response.content
 
 		#testing that header is image/jpeg
 		self.assertEqual(response.headers['content-type'], 'application/json; charset=utf-8')
 
 		#testing that header is image/jpeg
 		self.assertEqual(json.loads(response.content)['resource_type'], 'image')
+
+		#inform where is the new image
+		print ("new image url "+ json.loads(response.content)['url'])
 
 	def test_image_upload_multipart(self):
 		data =  open ("./d1.jpg", "r").read()
