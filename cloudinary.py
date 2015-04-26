@@ -66,8 +66,11 @@ class TestCloudinary(unittest.TestCase):
 		#obtain the response
 		response = requests.post(image_upload_url,data=parameters)
 
-		#testing that the response is 200
+		#testing that the response is 20
 		self.assertEqual(response.status_code, 400)
+
+		#other test
+		
 
 	@staticmethod
 	def getSignature( parameters):
